@@ -9,7 +9,11 @@ require("dotenv").config();
 
 //middlewares
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://localhost:3000"], // Replace with your frontend's URL
+  origin: [
+    "http://localhost:3000",
+    "https://localhost:3000",
+    "https://frontend-assignment-zeta-ivory.vercel.app",
+  ], // Replace with your frontend's URL
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   optionsSuccessStatus: 204, // No Content
   preflightContinue: true,
