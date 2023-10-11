@@ -19,7 +19,6 @@ router.get("/:fileId", async (req, res) => {
 
       let contentType = "";
       let contentDisposition = "";
-      console.log(file);
       if (file.fileType === "image/png") {
         contentType = "image/png";
         contentDisposition = `attachment; filename=Download.png`;

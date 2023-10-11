@@ -80,7 +80,8 @@ router.post("/signin", async (req, res) => {
     }
 
     const payload = { user: { id: existingUser._id } };
-    const accessToken = await jwt.sign(payload, process.env.secret, {
+    console.log(payload);
+    const accessToken = jwt.sign(payload, process.env.secret, {
       expiresIn: 360000,
     });
 
@@ -116,6 +117,7 @@ router.get("/signout", async (_req, res) => {
 //user details
 router.get("/userfiles", isAuthenticated, async (req, res) => {
   try {
+    console.log("qqw", req.user);
     const files = await File.find({ createdBy: req.user._id });
 
     if (!files) {
